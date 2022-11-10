@@ -1,0 +1,11 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h3>Editing Group</h3>
+        <%= render 'form', group: @group %>
+  </div>
+</div>
+
+<% if current_user.id == @group.owner_id %>
+ <%= link_to 'DELETE', group_group_destroy_path(@group), method: :delete, class: "btn btn-sm btn-danger" %>
+ <% end %>
